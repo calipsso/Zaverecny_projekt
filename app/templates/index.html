@@ -11,7 +11,7 @@
     {% if current_user.is_authenticated %}
     <a class="btn btn-primary btn-lg" href="{{ url_for('new_event') }}" role="button" style="background-color: #64b5f6; border-color: #64b5f6;">Create New Event</a>
     {% else %}
-    <a class="btn btn-primary btn-lg" href="{{ url_for('register') }}" role="button" style="background-color: #64b5f6; border-color: #64b5f6;">Join Us Today</a>
+    <a class="btn btn-primary btn-lg" href="{{ url_for('register') }}" role="button" id="join-btn" style="background-color: #64b5f6; border-color: #64b5f6;">Join Us Today</a>
     {% endif %}
 </div>
 
@@ -34,4 +34,19 @@
         {% endfor %}
     </div>
 </div>
+
+<script>
+    // JavaScript pre zmenu farby tlačidla "Join Us Today" na zelenú po prejdení myšou
+    const joinBtn = document.getElementById('join-btn');
+
+    joinBtn.addEventListener('mouseover', () => {
+        joinBtn.style.backgroundColor = '#8bc34a';  // Zelená farba
+        joinBtn.style.borderColor = '#8bc34a';     // Zelená farba aj pre okraj
+    });
+
+    joinBtn.addEventListener('mouseout', () => {
+        joinBtn.style.backgroundColor = '#64b5f6';  // Pôvodná modrá farba
+        joinBtn.style.borderColor = '#64b5f6';     // Pôvodná modrá farba aj pre okraj
+    });
+</script>
 {% endblock %}
