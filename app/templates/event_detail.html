@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block title %}{{ event.title }}{% endblock %}
+{% block content %}
+    <h1 class="my-4">{{ event.title }}</h1>
+    <p>{{ event.description }}</p>
+    <p>Kategória: {{ event.category }}</p>
+    <p>Poloha: {{ event.location }}</p>
+    <p>Organizátor: {{ event.organizer.username }}</p>
+{% endblock %}

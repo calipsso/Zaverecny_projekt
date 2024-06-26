@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block title %}Edit Event{% endblock %}
+{% block content %}
+<div class="jumbotron mt-4" style="background-color: #e3f2fd; color: #0d47a1;">
+    <h1 class="display-4">Edit Your Event</h1>
+    <p style="color: #01579b;">Make updates to your event details below.</p>
+    <hr class="my-4">
+    <p>Update the event title, description, category, and location.</p>
+</div>
+
+<div class="container">
+    <h2 class="my-4">Edit Event</h2>
+    <form method="POST">
+        <div class="form-group">
+            <label for="title">Title</label>
+            <input type="text" class="form-control" id="title" name="title" value="{{ event.title }}">
+        </div>
+        <div class="form-group">
+            <label for="description">Description</label>
+            <textarea class="form-control" id="description" name="description">{{ event.description }}</textarea>
+        </div>
+        <div class="form-group">
+            <label for="category">Category</label>
+            <input type="text" class="form-control" id="category" name="category" value="{{ event.category }}">
+        </div>
+        <div class="form-group">
+            <label for="location">Location</label>
+            <input type="text" class="form-control" id="location" name="location" value="{{ event.location }}">
+        </div>
+        <button type="submit" class="btn btn-primary">Update Event</button>
+    </form>
+</div>
+{% endblock %}
